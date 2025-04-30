@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0ba55d;
+  text-align: center;
+  color: #333;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #020e02;
+  text-transform: uppercase;
+  animation: fadeIn 2s ease-out;
+}
+
+#carta {
+  width: 200px;
+  height: 300px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 16px;
+}
+
+#carta:hover {
+  transform: rotate(10deg);
+}
+
+#puntuacion {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #a31106;
+  animation: slideIn 1s ease-out;
+}
+
+#mensaje {
+  font-size: 2.5rem;
+  color: rgb(18, 5, 67);
+}
+
+#contenedorBotones button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  background-color: #083d14;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contenedorBotones button:hover {
+  background-color: #e67e22;
+  transform: scale(1.1);
+}
+
+#contenedorBotones button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
