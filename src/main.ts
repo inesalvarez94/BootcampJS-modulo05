@@ -3,13 +3,14 @@ let puntuacion: number = 0;
 function muestraPuntuacion() {
   const elementoPuntuacion = document.getElementById(
     "puntuacion"
-  ) as HTMLDivElement;
-  elementoPuntuacion.textContent = puntuacion.toString();
+  );
+  if (elementoPuntuacion instanceof HTMLDivElement) {
+    elementoPuntuacion.textContent = puntuacion.toString();
+  }
 }
 
 function dameCarta(): number {
-  const numero = Math.floor(Math.random() * 10) + 1; // 1 a 10
-  return numero;
+  return Math.floor(Math.random() * 10) + 1; 
 }
 
 function mostrarCarta(carta: number): void {
@@ -118,8 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const valor = obtenerValorCarta(nuevaCarta);
       puntuacionHipotetica += valor;
       cartasExtra.push(nuevaCarta);
-
-      if (puntuacionHipotetica >= 7.5) break;
     }
 
     let resultado = `Si hubieras seguido, habrías sacado: ${cartasExtra
